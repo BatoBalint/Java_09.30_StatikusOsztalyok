@@ -2,12 +2,15 @@ package hu.petrik;
 
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
 public final class Veletlen {
     private static Random random = new Random();
+    private static List<String> vezetekNevek = feltolt("list/veznev.txt");
+    private static List<String> ferfiKerNevek = feltolt("list/ferfikernevek.txt");
+    private static List<String> noiKerNevek = feltolt("list/noikernevek.txt");
+
     private Veletlen() {
     }
 
@@ -19,6 +22,14 @@ public final class Veletlen {
             System.out.println(e.getMessage());
         }
         return fajlSorai;
+    }
+
+    private static int velEgesz(int min, int max) {
+        return random.nextInt(max - min + 1) + min;
+    }
+
+    private static char velKarakter(char min, char max) {
+        return (char) velEgesz(min, max);
     }
 }
 
