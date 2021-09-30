@@ -11,7 +11,7 @@ public final class Veletlen {
     private Veletlen() {
     }
 
-    private List<String> feltolt(String fajlnev) {
+    private static List<String> feltolt(String fajlnev) {
         List<String> fajlSorai = null;
         try {
             fajlSorai = Files.readAllLines(Paths.get(fajlnev));
